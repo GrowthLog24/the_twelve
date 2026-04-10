@@ -308,7 +308,7 @@ export default function Home() {
               className="bg-[#D4AF77] hover:bg-[#c59e62] text-white font-bold flex-1 min-w-[150px] py-4 h-auto rounded-lg text-[14px]"
               render={
                 <a
-                  href="https://forms.gle/XXXXXXX"
+                  href="https://forms.gle/6emzu92WCEXXiAiz5"
                   target="_blank"
                   rel="noopener noreferrer"
                 />
@@ -321,7 +321,7 @@ export default function Home() {
               className="border-[#0A2540] text-[#0A2540] flex-1 min-w-[150px] py-4 h-auto rounded-lg text-[14px]"
               render={
                 <a
-                  href="https://forms.gle/XXXXXXX"
+                  href="https://forms.gle/6emzu92WCEXXiAiz5"
                   target="_blank"
                   rel="noopener noreferrer"
                 />
@@ -417,7 +417,9 @@ export default function Home() {
             <div className="qbox">
               <p>
                 "내 주변 사람들의 가장 소중한 부동산 투자는 내가 챙겨줄 수
-                있는 사람이 되고 싶습니다. 더트웰브는 그 마음을 공유하는
+                있는 사람이 되고 싶습니다."
+                <br />
+                "더트웰브는 그 마음을 공유하는
                 사람들이 모여 서로의 평생 파트너가 되는 공간입니다."
               </p>
               <span className="by">— 안혜린 대표</span>
@@ -491,7 +493,7 @@ export default function Home() {
             className="bg-[#D4AF77] hover:bg-[#c59e62] text-white font-bold px-9 py-4 h-auto rounded-lg text-[15px]"
             render={
               <a
-                href="https://forms.gle/XXXXXXX"
+                href="https://forms.gle/6emzu92WCEXXiAiz5"
                 target="_blank"
                 rel="noopener noreferrer"
               />

@@ -21,7 +21,7 @@ export default function Nav() {
           <Button
             className="bg-[#0A2540] hover:bg-[#0d2f54] text-white text-[13px] font-bold px-5 py-2 h-auto rounded-md"
             render={
-              <a href="https://forms.gle/XXXXXXX" target="_blank" rel="noopener noreferrer" />
+              <a href="https://forms.gle/6emzu92WCEXXiAiz5" target="_blank" rel="noopener noreferrer" />
             }
           >
             수퍼 얼리버드 신청

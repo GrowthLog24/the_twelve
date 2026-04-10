@@ -383,7 +383,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 0 12px 12px 0;
 }
 .qbox p { font-size: 17px; color: var(--navy); line-height: 1.9; font-style: italic; }
-.qbox .by { font-size: 15px; font-weight: 700; color: var(--gold); margin-top: 10px; display: block; }
+.qbox .by { font-size: 15px; font-weight: 700; font-style: italic; color: var(--gold); margin-top: 10px; display: block; }
 
 /* ── Tools ── */
 .tools-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }

@@ -64,7 +64,7 @@ export function CountdownTimer() {
       <div className="cd-note">
         4월 17일 1차 OT 이전 등록자 한정<br />최대 할인 적용
       </div>
-      <a className="btn-primary" href="https://forms.gle/XXXXXXX" target="_blank" rel="noopener noreferrer">
+      <a className="btn-primary" href="https://forms.gle/6emzu92WCEXXiAiz5" target="_blank" rel="noopener noreferrer">
         수퍼 얼리버드 신청하기
       </a>
       <a className="btn-line" href="#ot-sec">
