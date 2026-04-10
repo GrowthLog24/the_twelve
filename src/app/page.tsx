@@ -371,7 +371,7 @@ export default function Home() {
       <section className="bg-white py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-[#0A2540] mb-10">FAQ</h2>
-          <Accordion type="single" collapsible="true" className="w-full">
+          <Accordion className="w-full">
             <AccordionItem value="faq-1">
               <AccordionTrigger className="text-left font-semibold text-lg py-4">Q. 오프라인은 매일 가야 하나요?</AccordionTrigger>
               <AccordionContent className="text-gray-600 leading-relaxed text-base pb-6">
