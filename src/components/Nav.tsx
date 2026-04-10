@@ -1,32 +1,33 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Nav() {
   return (
-    <nav className="nav">
+    <nav className="nav-bar">
       <div className="nav-inner">
-        <div className="nav-logo">
-          THE <span>12</span>
+        <div className="nav-left">
+          <a href="/" className="nav-logo" aria-label="THE 12 홈으로 이동">
+            <span className="nav-logo-image">
+              <Image
+                src="/images/the12-logo.png"
+                alt="THE 12 부동산 커뮤니티 로고"
+                fill
+                priority
+                sizes="55px"
+              />
+            </span>
+          </a>
         </div>
-        <div className="nav-right">
-          <span className="nav-label">4/17 수퍼 얼리버드 마감</span>
-          <Button
-            variant="outline"
-            className="border-[#0A2540] text-[#0A2540] text-[13px] font-bold px-5 py-2 h-auto rounded-md"
-            render={<a href="#ot-sec" />}
-          >
-            무료 OT 신청
-          </Button>
-          <Button
-            className="bg-[#0A2540] hover:bg-[#0d2f54] text-white text-[13px] font-bold px-5 py-2 h-auto rounded-md"
-            render={
-              <a href="https://forms.gle/6emzu92WCEXXiAiz5" target="_blank" rel="noopener noreferrer" />
-            }
-          >
-            수퍼 얼리버드 신청
-          </Button>
+
+        <div className="nav-menu">
+          <a href="#intro">소개</a>
+          <a href="#program">프로그램</a>
+          <a href="#leader">리더</a>
+          <a href="#faq">FAQ</a>
         </div>
+
+        <div className="nav-right" />
       </div>
     </nav>
   );
