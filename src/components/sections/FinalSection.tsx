@@ -4,9 +4,9 @@ const GOOGLE_FORM_URL = "https://forms.gle/6emzu92WCEXXiAiz5";
 
 export function FinalSection() {
   return (
-    <section id="cta" className="snap-section bg-[#0A2540] text-white text-center">
+    <section id="cta" className="snap-section bg-navy text-white text-center">
       <div className="inner">
-        <h2 data-reveal className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-snug break-keep">
+        <h2 data-reveal className="mb-6 leading-snug">
           부동산 네트워크의 새로운 에너지,<br />더트웰브와 함께 시작하세요.
         </h2>
         <p data-reveal data-reveal-delay="120" className="text-base md:text-lg text-gray-300 mb-10 leading-relaxed break-keep">
@@ -16,10 +16,10 @@ export function FinalSection() {
         </p>
 
         <div data-reveal data-reveal-delay="240" className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="bg-[#D4AF77] hover:bg-[#c09f6a] text-white h-14 w-56 text-lg font-bold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
+          <Button size="lg" className="bg-gold hover:bg-gold-hover text-white h-14 w-56 text-lg font-bold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
             수퍼 얼리버드 등록하기
           </Button>
-          <Button size="lg" className="bg-white hover:bg-gray-100 text-[#0A2540] h-14 w-56 text-lg font-bold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
+          <Button size="lg" className="bg-white hover:bg-gray-100 text-navy h-14 w-56 text-lg font-bold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
             무료 OT 신청하기
           </Button>
         </div>

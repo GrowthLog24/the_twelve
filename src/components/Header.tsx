@@ -85,14 +85,14 @@ export function Header() {
               onClick={() => scrollToSection(item.id)}
               className={`relative text-sm font-medium cursor-pointer transition-colors py-1
                 ${activeSection === item.id
-                  ? "text-[#0A2540] font-bold"
-                  : "text-gray-400 hover:text-[#0A2540]"
+                  ? "text-navy font-bold"
+                  : "text-gray-400 hover:text-navy"
                 }
               `}
             >
               {item.label}
               <span
-                className={`absolute bottom-0 left-0 h-[2px] bg-[#D4AF77] transition-all duration-300
+                className={`absolute bottom-0 left-0 h-[2px] bg-gold transition-all duration-300
                   ${activeSection === item.id ? "w-full" : "w-0 group-hover:w-full"}
                 `}
               />
@@ -104,7 +104,7 @@ export function Header() {
         <div className="hidden lg:block">
           <Button
             size="sm"
-            className="bg-[#D4AF77] hover:bg-[#c09f6a] text-white font-bold px-5"
+            className="bg-gold hover:bg-gold-hover text-white font-bold px-5"
             render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />}
             nativeButton={false}
           >
@@ -114,7 +114,7 @@ export function Header() {
 
         {/* Mobile/Tablet hamburger */}
         <button
-          className="lg:hidden p-2 text-[#0A2540]"
+          className="lg:hidden p-2 text-navy"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="메뉴"
         >
@@ -132,15 +132,15 @@ export function Header() {
                 onClick={() => scrollToSection(item.id)}
                 className={`text-left text-base font-medium py-2 transition-colors ${
                   activeSection === item.id
-                    ? "text-[#0A2540] font-bold"
-                    : "text-gray-500 hover:text-[#0A2540]"
+                    ? "text-navy font-bold"
+                    : "text-gray-500 hover:text-navy"
                 }`}
               >
                 {item.label}
               </button>
             ))}
             <Button
-              className="bg-[#D4AF77] hover:bg-[#c09f6a] text-white font-bold mt-2"
+              className="bg-gold hover:bg-gold-hover text-white font-bold mt-2"
               render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />}
               nativeButton={false}
             >

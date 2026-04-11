@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(npx next:*)",
+      "Bash(grep -r \"main\\\\|section\\\\|article\\\\|footer\\\\|header\" /c/Users/lavly/Downloads/the_twelve-main2/src/app/page.tsx /c/Users/lavly/Downloads/the_twelve-main2/src/components/sections/*.tsx)"
     ]
   }
 }

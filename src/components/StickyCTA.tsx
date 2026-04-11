@@ -48,12 +48,12 @@ export function StickyCTA() {
         </div>
       </div>
 
-      <div className="bg-[#0A2540]">
+      <div className="bg-navy">
       <div className="inner py-5">
         {/* Countdown */}
         <p className="text-white text-center text-base font-bold mb-4">
           ⏳ 수퍼 얼리버드 마감까지{"  "}
-          <span className="tabular-nums ml-1 text-[#D4AF77]">
+          <span className="tabular-nums ml-1 text-gold">
             {pad(timeLeft.days)} : {pad(timeLeft.hours)} : {pad(timeLeft.minutes)} : {pad(timeLeft.seconds)}
           </span>
         </p>
@@ -64,7 +64,7 @@ export function StickyCTA() {
             href={GOOGLE_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-[#D4AF77] hover:bg-[#c09f6a] text-white font-extrabold text-lg rounded-md shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-colors flex items-center justify-center text-center leading-snug py-4"
+            className="flex-1 bg-gold hover:bg-gold-hover text-white font-extrabold text-lg rounded-md shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-colors flex items-center justify-center text-center leading-snug py-4"
           >
             <span>수퍼 얼리버드<br />신청하기 <span className="font-normal text-sm">(4/17 마감)</span></span>
           </a>
@@ -72,7 +72,7 @@ export function StickyCTA() {
             href={GOOGLE_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-white hover:bg-gray-100 text-[#0A2540] font-extrabold text-lg rounded-md shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-colors flex items-center justify-center text-center py-4"
+            className="flex-1 bg-white hover:bg-gray-100 text-navy font-extrabold text-lg rounded-md shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-colors flex items-center justify-center text-center py-4"
           >
             무료 OT 참석하기
           </a>
