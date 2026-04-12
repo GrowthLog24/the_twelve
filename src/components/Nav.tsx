@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Nav() {
   return (
     <nav className="nav-bar">
       <div className="nav-inner">
         <div className="nav-left">
-          <a href="/" className="nav-logo" aria-label="THE 12 홈으로 이동">
+          <Link href="/" className="nav-logo" aria-label="THE 12 홈으로 이동">
             <span className="nav-logo-image">
               <Image
                 src="/images/the12-logo.png"
@@ -17,7 +18,7 @@ export default function Nav() {
                 sizes="55px"
               />
             </span>
-          </a>
+          </Link>
         </div>
 
         <div className="nav-menu">

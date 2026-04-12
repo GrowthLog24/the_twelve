@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 function calcTimeLeft() {
   const targetDate = new Date("2026-04-17T23:59:59").getTime();
@@ -23,18 +23,14 @@ function pad(n: number) {
 }
 
 export function MiniTimer() {
-  const [mounted, setMounted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+  const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
 
   useEffect(() => {
-    setMounted(true);
-    setTimeLeft(calcTimeLeft());
-
     const interval = setInterval(() => {
       const next = calcTimeLeft();
       setTimeLeft(next);

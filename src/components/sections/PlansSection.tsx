@@ -1,71 +1,52 @@
 import { CheckCircle2, XCircle } from "lucide-react";
+import { PLANS } from "@/data/content";
 
 export function PlansSection() {
   return (
     <section id="program" className="snap-section sec-bg-alt">
       <div className="inner">
-        <p data-reveal className="section-label">PROGRAM</p>
-        <h2 data-reveal data-reveal-delay="60">나에게 맞는 과정을 선택하세요</h2>
+        <p data-reveal className="section-label">{PLANS.label}</p>
+        <h2 data-reveal data-reveal-delay="60">{PLANS.title}</h2>
         <div className="section-divider mb-10" />
 
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Offline Premium */}
-          <div data-reveal data-reveal-delay="140" className="card card--lg card--gold-top relative overflow-visible">
-            <span className="inline-block bg-gold text-white text-xs font-bold px-3 py-1 rounded-full mb-4">추천 · 최대 혜택</span>
-            <h3 className="text-xl font-bold mb-1">오프라인 프리미엄</h3>
-            <p className="text-sm text-gray-500 mb-4">강남역 17층 · 오전 09:00~11:30 출석</p>
-            <div className="flex items-baseline gap-2 mb-2">
-              <span className="text-3xl font-extrabold text-gold">199만원</span>
-              <span className="text-sm text-gray-400 line-through">210만원</span>
+          {PLANS.items.map((plan, i) => (
+            <div
+              key={plan.name}
+              data-reveal
+              data-reveal-delay={140 + i * 110}
+              className={`card card--lg ${plan.accent ? "card--gold-top relative overflow-visible" : "card--gray-top"}`}
+            >
+              {plan.badge && (
+                <span className="inline-block bg-gold text-white text-xs font-bold px-3 py-1 rounded-full mb-4">{plan.badge}</span>
+              )}
+              <h3 className="text-xl font-bold mb-1 mt-2">
+                {plan.name}
+                {plan.nameTag && <span className="text-base font-normal text-gray-500"> {plan.nameTag}</span>}
+              </h3>
+              <p className="text-sm text-gray-500 mb-4">{plan.subtitle}</p>
+              <div className="flex items-baseline gap-2 mb-2">
+                <span className="text-3xl font-extrabold text-gold">{plan.price}</span>
+                <span className="text-sm text-gray-400 line-through">{plan.originalPrice}</span>
+              </div>
+              <span className="inline-block text-xs text-gold border border-gold px-2 py-0.5 rounded mb-4">{plan.discount}</span>
+              <hr className="border-gray-200 mb-4" />
+              <div className="space-y-2 text-sm">
+                {plan.features.map((f) =>
+                  f.included ? (
+                    <div key={f.text} className="flex items-center gap-2">
+                      <CheckCircle2 className="text-gold w-4 h-4 shrink-0" />
+                      {"bold" in f && f.bold ? <span className="font-semibold">{f.text}</span> : f.text}
+                    </div>
+                  ) : (
+                    <div key={f.text} className="flex items-center gap-2 text-gray-300">
+                      <XCircle className="w-4 h-4 shrink-0" /> {f.text}
+                    </div>
+                  )
+                )}
+              </div>
             </div>
-            <span className="inline-block text-xs text-gold border border-gold px-2 py-0.5 rounded mb-4">11만원 절약</span>
-            <hr className="border-gray-200 mb-4" />
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2"><CheckCircle2 className="text-gold w-4 h-4 shrink-0" /> <span className="font-semibold">오후 6시까지 지정석 자습</span></div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="text-gold w-4 h-4 shrink-0" /> 정기모임 오프+온라인</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="text-gold w-4 h-4 shrink-0" /> 월 1회 개인 면담</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="text-gold w-4 h-4 shrink-0" /> VIP 현장 섀도우</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="text-gold w-4 h-4 shrink-0" /> 우수회원 채용 연계</div>
-            </div>
-          </div>
-
-          {/* Online A */}
-          <div data-reveal data-reveal-delay="250" className="card card--lg card--gray-top">
-            <h3 className="text-xl font-bold mb-1 mt-2">온라인 A <span className="text-base font-normal text-gray-500">(출석형)</span></h3>
-            <p className="text-sm text-gray-500 mb-4">저녁 구글밋 라이브 · 직장인 · 지방 거주자</p>
-            <div className="flex items-baseline gap-2 mb-2">
-              <span className="text-3xl font-extrabold text-gold">79만원</span>
-              <span className="text-sm text-gray-400 line-through">90만원</span>
-            </div>
-            <span className="inline-block text-xs text-gold border border-gold px-2 py-0.5 rounded mb-4">11만원 절약</span>
-            <hr className="border-gray-200 mb-4" />
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2"><CheckCircle2 className="text-gold w-4 h-4 shrink-0" /> 정기모임 오프+온라인</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="text-gold w-4 h-4 shrink-0" /> 우수회원 채용 연계</div>
-              <div className="flex items-center gap-2 text-gray-300"><XCircle className="w-4 h-4 shrink-0" /> 지정석 자습</div>
-              <div className="flex items-center gap-2 text-gray-300"><XCircle className="w-4 h-4 shrink-0" /> 개인 면담</div>
-              <div className="flex items-center gap-2 text-gray-300"><XCircle className="w-4 h-4 shrink-0" /> VIP 섀도우</div>
-            </div>
-          </div>
-
-          {/* Online B */}
-          <div data-reveal data-reveal-delay="360" className="card card--lg card--gray-top">
-            <h3 className="text-xl font-bold mb-1 mt-2">온라인 B <span className="text-base font-normal text-gray-500">(자율형)</span></h3>
-            <p className="text-sm text-gray-500 mb-4">자율 인증 · 자기관리 잘 되는 분</p>
-            <div className="flex items-baseline gap-2 mb-2">
-              <span className="text-3xl font-extrabold text-gold">49만원</span>
-              <span className="text-sm text-gray-400 line-through">60만원</span>
-            </div>
-            <span className="inline-block text-xs text-gold border border-gold px-2 py-0.5 rounded mb-4">11만원 절약</span>
-            <hr className="border-gray-200 mb-4" />
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2"><CheckCircle2 className="text-gold w-4 h-4 shrink-0" /> 정기모임 오프+온라인</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="text-gold w-4 h-4 shrink-0" /> 우수회원 채용 연계</div>
-              <div className="flex items-center gap-2 text-gray-300"><XCircle className="w-4 h-4 shrink-0" /> 지정석 자습</div>
-              <div className="flex items-center gap-2 text-gray-300"><XCircle className="w-4 h-4 shrink-0" /> 개인 면담</div>
-              <div className="flex items-center gap-2 text-gray-300"><XCircle className="w-4 h-4 shrink-0" /> VIP 섀도우</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

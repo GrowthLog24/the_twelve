@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -74,7 +75,7 @@ export function Header() {
           onClick={() => scrollToSection("hero")}
           className="shrink-0"
         >
-          <img src="/logo.svg" alt="THE 12" className="h-5" />
+          <Image src="/logo.svg" alt="THE 12" width={80} height={20} className="h-5 w-auto" />
         </button>
 
         {/* Desktop Nav */}

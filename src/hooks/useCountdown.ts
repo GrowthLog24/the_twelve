@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 interface CountdownTime {
   days: number;
@@ -10,7 +10,11 @@ interface CountdownTime {
 }
 
 export function useCountdown(targetDate: string) {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const [timeLeft, setTimeLeft] = useState<CountdownTime>({
     days: 0,
     hours: 0,
@@ -19,7 +23,6 @@ export function useCountdown(targetDate: string) {
   });
 
   useEffect(() => {
-    setMounted(true);
     const target = new Date(targetDate).getTime();
 
     const update = () => {

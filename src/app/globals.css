@@ -164,7 +164,6 @@
 
 /* Normal sections */
 .snap-section {
-  color: var(--color-navy);
   padding-top: 10rem;
   padding-bottom: 10rem;
 }
@@ -207,8 +206,12 @@
   font-size: clamp(1.25rem, 2.5vw + 0.75rem, 3rem);
   line-height: 1.2;
   font-weight: 700;
+  color: var(--color-navy);
   margin-bottom: 0.75rem;
   word-break: keep-all;
+}
+.snap-section h2.text-white {
+  color: white;
 }
 .snap-section-hero h1 {
   font-size: clamp(1.5rem, 3vw + 1rem, 3.75rem);
@@ -223,7 +226,13 @@
   letter-spacing: 0.1em;
 }
 .snap-section h2.title-compact {
-  font-size: 1.25rem;
+  font-size: 2rem;
+}
+@media (max-width: 767px) {
+  .snap-section h2.title-compact {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 
 .section-label {

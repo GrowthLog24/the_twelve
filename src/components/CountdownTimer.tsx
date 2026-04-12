@@ -14,7 +14,7 @@ export function CountdownTimer() {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="bg-navy/82 text-white font-bold text-center p-3 rounded-md mb-4 text-sm md:text-base flex justify-center items-center gap-3">
+    <div className="bg-white text-navy font-bold text-center p-3 rounded-md mb-4 text-sm md:text-base flex justify-center items-center gap-3 border border-gold shadow-md">
       <span>수퍼 얼리버드 마감까지</span>
       <span className="px-3 py-1 rounded font-mono tracking-wider">
         {pad(timeLeft.days)}

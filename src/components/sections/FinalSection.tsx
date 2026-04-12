@@ -1,26 +1,27 @@
 import { Button } from "@/components/ui/button";
-
-const GOOGLE_FORM_URL = "https://forms.gle/6emzu92WCEXXiAiz5";
+import { FINAL, GOOGLE_FORM_URL } from "@/data/content";
 
 export function FinalSection() {
   return (
     <section id="cta" className="snap-section bg-navy text-white text-center">
       <div className="inner">
-        <h2 data-reveal className="mb-6 leading-snug">
-          부동산 네트워크의 새로운 에너지,<br />더트웰브와 함께 시작하세요.
+        <h2 data-reveal className="mb-6 leading-snug text-white">
+          {FINAL.title.map((line, i) => (
+            <span key={i}>{line}{i < FINAL.title.length - 1 && <br />}</span>
+          ))}
         </h2>
         <p data-reveal data-reveal-delay="120" className="text-base md:text-lg text-gray-300 mb-10 leading-relaxed break-keep">
-          2026년 10월 시험까지 6개월.<br />
-          각자의 전문성을 가진 사람들이 부동산이라는 공통 언어로 모여,<br className="hidden md:block" />
-          서로의 평생 파트너가 되는 여정입니다.
+          {FINAL.description.map((line, i) => (
+            <span key={i}>{line}{i < FINAL.description.length - 1 && <br />}</span>
+          ))}
         </p>
 
         <div data-reveal data-reveal-delay="240" className="flex flex-col sm:flex-row justify-center gap-4">
           <Button size="lg" className="bg-gold hover:bg-gold-hover text-white h-14 w-56 text-lg font-bold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
-            수퍼 얼리버드 등록하기
+            {FINAL.cta.primary}
           </Button>
           <Button size="lg" className="bg-white hover:bg-gray-100 text-navy h-14 w-56 text-lg font-bold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
-            무료 OT 신청하기
+            {FINAL.cta.secondary}
           </Button>
         </div>
       </div>
