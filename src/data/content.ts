@@ -28,7 +28,7 @@ export const HERO = {
 /* ─── Why ───────────────────────────────────────── */
 export const WHY = {
   label: "WHY",
-  title: "WHY THE12?",
+  title: "WHY **THE12**?",
   description:
     "에어비앤비, 경매, 투자... 관심은 넘치지만 진짜 '뼈대'는 없는 상태로 단편적인 지식만 쌓고 있지는 않으신가요?",
   cards: [
@@ -53,7 +53,7 @@ export const WHY = {
 /* ─── Plans (Program) ───────────────────────────── */
 export const PLANS = {
   label: "PROGRAM",
-  title: "나에게 맞는 과정을 선택하세요",
+  title: "나에게 맞는 **과정**을 선택하세요",
   items: [
     {
       name: "오프라인 프리미엄",
@@ -108,7 +108,7 @@ export const PLANS = {
 
 /* ─── Attendance ────────────────────────────────── */
 export const ATTENDANCE = {
-  title: "합격은 \"루틴\"에서 결정됩니다",
+  title: "합격은 **루틴**에서 결정됩니다",
   description: "의지만으로는 6개월을 버티기 어렵습니다. 구조가 완주를 만듭니다.",
   cards: [
     { title: "오프라인", desc: "오전 9:00~11:30 강제 출석\n이후 오후 6시까지 자율 자습" },
@@ -120,7 +120,7 @@ export const ATTENDANCE = {
 
 /* ─── Meetup ────────────────────────────────────── */
 export const MEETUP = {
-  title: ["매월 첫째 금요일 저녁 7시 —", "진짜 네트워크가 만들어지는 시간"],
+  title: ["매월 첫째 금요일 저녁 7시 —", "**진짜 네트워크**가 만들어지는 시간"],
   description: "시험 공부를 넘어, 함께 성장합니다.",
   schedule: [
     { label: "매월 첫째 금요일 19:00 ~ 22:00", icon: "calendar" as const },
@@ -139,7 +139,7 @@ export const MEETUP = {
 /* ─── Leader ────────────────────────────────────── */
 export const LEADER = {
   label: "LEADER",
-  title: ["17년 현장 경험의 전문가가", "첫걸음을 함께 설계합니다"],
+  title: ["**17년 현장 경험**의 전문가가", "첫걸음을 **함께 설계**합니다"],
   profile: {
     name: "안혜린 대표",
     role: "THE 12 Founder",
@@ -161,7 +161,7 @@ export const LEADER = {
 
 /* ─── Stats ─────────────────────────────────────── */
 export const STATS = {
-  title: "숫자로 증명하는 더트웰브",
+  title: "**숫자**로 증명하는 **더트웰브**",
   items: [
     { n: "17", label: "부동산 실무 경력", caption: "쉐어하우스·임대·시행·개발·컨설팅" },
     { n: "18", label: "에이블하우스 지점 운영", caption: "코티에이블 창업 → 직방 자산 엑싯" },
@@ -239,7 +239,7 @@ export const FAQ = {
 
 /* ─── Final CTA ─────────────────────────────────── */
 export const FINAL = {
-  title: ["부동산 네트워크의 새로운 에너지,", "더트웰브와 함께 시작하세요."],
+  title: ["**부동산 네트워크**의 새로운 에너지,", "**더트웰브**와 함께 시작하세요."],
   description: [
     "2026년 10월 시험까지 6개월.",
     "각자의 전문성을 가진 사람들이 부동산이라는 공통 언어로 모여,",

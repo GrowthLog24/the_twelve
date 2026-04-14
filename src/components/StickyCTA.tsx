@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useCountdown } from "@/hooks/useCountdown";
+import { Clock } from "lucide-react";
 
 const TARGET_DATE = "2026-04-17T23:59:59";
 const GOOGLE_FORM_URL = "https://forms.gle/6emzu92WCEXXiAiz5";
@@ -39,45 +40,38 @@ export function StickyCTA() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 animate-in slide-in-from-bottom-full duration-300">
-      {/* Scroll indicator */}
-      <div className="flex justify-center pb-2">
-        <div className="animate-bounce text-gray-400">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 10l5 5 5-5" />
-          </svg>
-        </div>
-      </div>
+      <div className="bg-navy/95 backdrop-blur-sm">
+        <div className="inner py-4">
+          {/* Countdown */}
+          <p className="text-white text-center text-sm font-medium mb-3 flex items-center justify-center gap-2">
+            <Clock className="w-4 h-4 text-gold" />
+            수퍼 얼리버드 마감까지
+            <span className="tabular-nums font-bold text-gold">
+              {pad(timeLeft.days)}일 {pad(timeLeft.hours)}:{pad(timeLeft.minutes)}:{pad(timeLeft.seconds)}
+            </span>
+          </p>
 
-      <div className="bg-navy">
-      <div className="inner py-5">
-        {/* Countdown */}
-        <p className="text-white text-center text-base font-bold mb-4">
-          ⏳ 수퍼 얼리버드 마감까지{"  "}
-          <span className="tabular-nums ml-1 text-gold">
-            {pad(timeLeft.days)} : {pad(timeLeft.hours)} : {pad(timeLeft.minutes)} : {pad(timeLeft.seconds)}
-          </span>
-        </p>
-
-        {/* Buttons */}
-        <div className="flex gap-4">
-          <a
-            href={GOOGLE_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-gold hover:bg-gold-hover text-white font-extrabold text-lg rounded-md shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-colors flex items-center justify-center text-center leading-snug py-4"
-          >
-            <span>수퍼 얼리버드<br />신청하기 <span className="font-normal text-sm">(4/17 마감)</span></span>
-          </a>
-          <a
-            href={GOOGLE_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-white hover:bg-gray-100 text-navy font-extrabold text-lg rounded-md shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-colors flex items-center justify-center text-center py-4"
-          >
-            무료 OT 참석하기
-          </a>
+          {/* Buttons */}
+          <div className="flex gap-3">
+            <a
+              href={GOOGLE_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex-1 inline-flex items-center justify-center h-12 text-base font-semibold text-white bg-gold rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(212,175,119,0.4)] hover:scale-[1.02]"
+            >
+              <span className="relative z-10">수퍼 얼리버드 신청</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
+            <a
+              href={GOOGLE_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center h-12 text-base font-semibold text-white border border-white/30 rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-navy hover:border-white"
+            >
+              무료 OT 참석
+            </a>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

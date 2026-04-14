@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { HERO, GOOGLE_FORM_URL } from "@/data/content";
@@ -8,11 +7,11 @@ export function HeroSection() {
   return (
     <section id="hero" className="snap-section-hero relative overflow-hidden">
       <Image src="/hero-bg.jpg" alt="더트웰브 부동산 스터디 메인 이미지" fill className="object-cover" priority />
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/70" />
 
       <div className="inner relative z-10 text-center pt-[calc(5rem+4rem+10px)] pb-[calc(5rem+10px)]">
         <div className="hero-item" style={{ animationDelay: "0ms" }}>
-          <div className="inline-block mb-6 px-10 py-1.5 rounded-[10px] text-xs font-semibold tracking-[0.2em] uppercase text-gold border border-gold/50 bg-gold/10 backdrop-blur-sm">
+          <div className="inline-block mb-6 px-10 py-1.5 rounded-full text-xs font-semibold tracking-[0.2em] uppercase text-gold border border-gold/30 bg-gold/10 backdrop-blur-sm">
             {HERO.badge}
           </div>
         </div>
@@ -41,13 +40,24 @@ export function HeroSection() {
           <CountdownTimer />
         </div>
 
-        <div className="hero-item flex flex-col sm:flex-row gap-4 justify-center mt-6" style={{ animationDelay: "540ms" }}>
-          <Button size="lg" className="bg-gold hover:bg-gold-hover text-white font-bold text-lg h-14 px-8" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
-            {HERO.cta.primary}
-          </Button>
-          <Button size="lg" className="bg-white hover:bg-gray-100 text-navy font-bold text-lg h-14 px-8" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
+        <div className="hero-item flex flex-col sm:flex-row gap-4 justify-center mt-8" style={{ animationDelay: "540ms" }}>
+          <a
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center justify-center h-14 px-10 text-base font-semibold text-white bg-gold rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(212,175,119,0.4)] hover:scale-[1.02]"
+          >
+            <span className="relative z-10">{HERO.cta.primary}</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </a>
+          <a
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center h-14 px-10 text-base font-semibold text-white border border-white/30 rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-navy hover:border-white"
+          >
             {HERO.cta.secondary}
-          </Button>
+          </a>
         </div>
       </div>
     </section>

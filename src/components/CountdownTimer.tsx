@@ -14,17 +14,29 @@ export function CountdownTimer() {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="bg-white text-navy font-bold text-center p-3 rounded-md mb-4 text-sm md:text-base flex justify-center items-center gap-3 border border-gold shadow-md">
-      <span>수퍼 얼리버드 마감까지</span>
-      <span className="px-3 py-1 rounded font-mono tracking-wider">
-        {pad(timeLeft.days)}
-        <span className="text-gold mx-0.5">:</span>
-        {pad(timeLeft.hours)}
-        <span className="text-gold mx-0.5">:</span>
-        {pad(timeLeft.minutes)}
-        <span className="text-gold mx-0.5">:</span>
-        {pad(timeLeft.seconds)}
-      </span>
+    <div className="countdown-frost inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 px-8 py-5 rounded-2xl">
+      <span className="text-sm font-semibold text-white/90">수퍼 얼리버드 마감까지</span>
+      <div className="flex items-center gap-4">
+        <div className="text-center">
+          <span className="block text-3xl sm:text-4xl font-bold tabular-nums text-white">{pad(timeLeft.days)}</span>
+          <span className="text-xs text-white/60 uppercase tracking-wider">Days</span>
+        </div>
+        <span className="text-gold text-2xl font-light">:</span>
+        <div className="text-center">
+          <span className="block text-3xl sm:text-4xl font-bold tabular-nums text-white">{pad(timeLeft.hours)}</span>
+          <span className="text-xs text-white/60 uppercase tracking-wider">Hours</span>
+        </div>
+        <span className="text-gold text-2xl font-light">:</span>
+        <div className="text-center">
+          <span className="block text-3xl sm:text-4xl font-bold tabular-nums text-white">{pad(timeLeft.minutes)}</span>
+          <span className="text-xs text-white/60 uppercase tracking-wider">Mins</span>
+        </div>
+        <span className="text-gold text-2xl font-light">:</span>
+        <div className="text-center">
+          <span className="block text-3xl sm:text-4xl font-bold tabular-nums text-white">{pad(timeLeft.seconds)}</span>
+          <span className="text-xs text-white/60 uppercase tracking-wider">Secs</span>
+        </div>
+      </div>
     </div>
   );
 }
