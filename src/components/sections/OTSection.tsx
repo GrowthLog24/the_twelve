@@ -15,11 +15,11 @@ export function OTSection() {
           ))}
         </p>
 
-        <div data-reveal data-reveal-delay="240" className="flex flex-col gap-3 max-w-md mx-auto mb-8">
+        <div data-reveal data-reveal-delay="240" className="flex flex-col gap-2 max-w-sm mx-auto mb-8">
           {OT.schedule.map((s) => (
-            <div key={s.round} className="card py-4 px-6 flex justify-between items-center">
+            <div key={s.round} className="border border-gray-200 rounded-lg py-3 px-5 flex justify-between items-center bg-transparent">
               <span className="font-bold text-navy">{s.round}</span>
-              <span className="text-gray-600">{s.date}</span>
+              <span className="text-gray-600 text-sm">{s.date}</span>
             </div>
           ))}
         </div>

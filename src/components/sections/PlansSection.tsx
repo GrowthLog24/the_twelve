@@ -35,12 +35,17 @@ export function PlansSection() {
                   {plan.features.map((f) =>
                     f.included ? (
                       <div key={f.text} className={`flex items-center gap-3 ${plan.accent ? "" : "text-gray-300"}`}>
-                        <Check className="text-gold w-4 h-4 shrink-0" strokeWidth={3} />
+                        <span className="w-5 h-5 shrink-0 rounded-full border-2 border-gold flex items-center justify-center">
+                          <Check className="text-gold w-3 h-3" strokeWidth={3} />
+                        </span>
                         {"bold" in f && f.bold ? <span className="font-semibold">{f.text}</span> : f.text}
                       </div>
                     ) : (
-                      <div key={f.text} className={`flex items-center gap-3 ${plan.accent ? "text-gray-300" : "text-gray-500"}`}>
-                        <X className="w-4 h-4 shrink-0" strokeWidth={2} /> {f.text}
+                      <div key={f.text} className={`flex items-center gap-3 ${plan.accent ? "text-gray-400" : "text-gray-500"}`}>
+                        <span className={`w-5 h-5 shrink-0 rounded-full border-2 ${plan.accent ? "border-gray-300" : "border-gray-500"} flex items-center justify-center`}>
+                          <X className={`w-3 h-3 ${plan.accent ? "text-gray-300" : "text-gray-500"}`} strokeWidth={2} />
+                        </span>
+                        {f.text}
                       </div>
                     )
                   )}

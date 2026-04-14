@@ -14,29 +14,31 @@ export function CountdownTimer() {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-6 bg-white/10 backdrop-blur-sm text-white px-6 py-4 rounded-xl">
-      <span className="text-sm font-medium text-white/80">수퍼 얼리버드 마감까지</span>
-      <div className="flex items-center gap-2 sm:gap-3">
+    <div className="relative inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 bg-white/10 backdrop-blur-md px-8 py-5 rounded-2xl">
+      <span className="text-sm font-semibold text-white/90">수퍼 얼리버드 마감까지</span>
+      <div className="flex items-center gap-4">
         <div className="text-center">
-          <span className="block text-2xl sm:text-3xl font-bold tabular-nums">{pad(timeLeft.days)}</span>
-          <span className="text-[10px] text-white/60 uppercase tracking-wider">Days</span>
+          <span className="block text-3xl sm:text-4xl font-bold tabular-nums text-white">{pad(timeLeft.days)}</span>
+          <span className="text-xs text-white/60 uppercase tracking-wider">Days</span>
         </div>
-        <span className="text-gold text-xl font-light">:</span>
+        <span className="text-gold text-2xl font-light">:</span>
         <div className="text-center">
-          <span className="block text-2xl sm:text-3xl font-bold tabular-nums">{pad(timeLeft.hours)}</span>
-          <span className="text-[10px] text-white/60 uppercase tracking-wider">Hours</span>
+          <span className="block text-3xl sm:text-4xl font-bold tabular-nums text-white">{pad(timeLeft.hours)}</span>
+          <span className="text-xs text-white/60 uppercase tracking-wider">Hours</span>
         </div>
-        <span className="text-gold text-xl font-light">:</span>
+        <span className="text-gold text-2xl font-light">:</span>
         <div className="text-center">
-          <span className="block text-2xl sm:text-3xl font-bold tabular-nums">{pad(timeLeft.minutes)}</span>
-          <span className="text-[10px] text-white/60 uppercase tracking-wider">Mins</span>
+          <span className="block text-3xl sm:text-4xl font-bold tabular-nums text-white">{pad(timeLeft.minutes)}</span>
+          <span className="text-xs text-white/60 uppercase tracking-wider">Mins</span>
         </div>
-        <span className="text-gold text-xl font-light">:</span>
+        <span className="text-gold text-2xl font-light">:</span>
         <div className="text-center">
-          <span className="block text-2xl sm:text-3xl font-bold tabular-nums">{pad(timeLeft.seconds)}</span>
-          <span className="text-[10px] text-white/60 uppercase tracking-wider">Secs</span>
+          <span className="block text-3xl sm:text-4xl font-bold tabular-nums text-white">{pad(timeLeft.seconds)}</span>
+          <span className="text-xs text-white/60 uppercase tracking-wider">Secs</span>
         </div>
       </div>
+      {/* 하단 블러 그라데이션 */}
+      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-white/30 blur-xl rounded-full" />
     </div>
   );
 }

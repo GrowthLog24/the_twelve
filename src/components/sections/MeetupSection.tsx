@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Check } from "lucide-react";
+import { Calendar, MapPin, CheckCircle2 } from "lucide-react";
 import { MEETUP } from "@/data/content";
 
 const ICONS = { calendar: Calendar, mapPin: MapPin } as const;
@@ -36,7 +36,7 @@ export function MeetupSection() {
             <ul className="space-y-4 text-gray-600">
               {MEETUP.topics.map((t) => (
                 <li key={t} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-gold shrink-0 mt-0.5" strokeWidth={3} />
+                  <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                   <span>{t}</span>
                 </li>
               ))}
