@@ -54,18 +54,20 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* ─── 섹션 배경색 ─────────────────────────────────────
-   여기서만 바꾸면 전체 섹션에 일괄 적용됩니다.
-   sec-bg     : 밝은 배경 (흰색 계열)
-   sec-bg-alt : 약간 따뜻한 배경 (회색 계열)
+/* ─── 섹션 배경색 (Luxury Style) ──────────────────
+   밝은 배경과 다크 배경의 대비로 시각적 리듬감 연출
 ──────────────────────────────────────────────────── */
 :root {
-  --sec-bg:     #fefefe;
-  --sec-bg-alt: #FCFAF7;
+  --sec-bg:      #ffffff;
+  --sec-bg-alt:  #FAFAF9;
+  --sec-bg-dark: #0A2540;
+  --sec-bg-cream: #F8F6F3;
 }
 
-.sec-bg     { background-color: var(--sec-bg); }
-.sec-bg-alt { background-color: var(--sec-bg-alt); }
+.sec-bg       { background-color: var(--sec-bg); }
+.sec-bg-alt   { background-color: var(--sec-bg-alt); }
+.sec-bg-dark  { background-color: var(--sec-bg-dark); }
+.sec-bg-cream { background-color: var(--sec-bg-cream); }
 
 :root {
   --background: oklch(1 0 0);
@@ -162,10 +164,16 @@
   }
 }
 
-/* Normal sections */
+/* Normal sections (Luxury spacing) */
 .snap-section {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+@media (min-width: 1024px) {
+  .snap-section {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
 }
 @media (max-width: 767px) {
   .snap-section {
@@ -173,7 +181,7 @@
     padding-bottom: 5rem;
   }
   .snap-section h2 {
-    font-size: 25px;
+    font-size: 1.75rem;
   }
 }
 
@@ -235,40 +243,70 @@
   }
 }
 
+/* ─── Section Label (Luxury Minimal) ─────────────── */
 .section-label {
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 600;
   color: var(--color-gold);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .section-divider {
-  width: 3rem;
-  height: 0.25rem;
-  background-color: var(--color-gold-light);
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+  margin-bottom: 1rem;
 }
 
 .section-desc {
-  font-size: 1rem;
-  color: #6b7280;
-  margin-bottom: 2.5rem;
+  font-size: 1.125rem;
+  color: #6B7280;
+  margin-bottom: 3.5rem;
   word-break: keep-all;
+  line-height: 1.7;
+  max-width: 640px;
 }
+.section-desc.mx-auto { margin-left: auto; margin-right: auto; }
 
-/* ─── Card ──────────────────────────────────────── */
+/* 다크 섹션용 라벨/디스크립션 */
+.sec-bg-dark .section-label { color: var(--color-gold-light); }
+.sec-bg-dark .section-desc { color: rgba(255, 255, 255, 0.7); }
+
+/* ─── Card (Luxury Minimal Style) ─────────────────
+   배경색 카드에 선 없이 섬세한 그림자로 깊이감 표현
+──────────────────────────────────────────────────── */
 .card {
   background: white;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(10, 37, 64, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(10, 37, 64, 0.1);
+  transform: translateY(-2px);
 }
 @media (min-width: 1024px) {
-  .card--lg { padding: 2rem; }
+  .card--lg { padding: 2.5rem; }
 }
-.card--gold-top  { border-top: 4px solid var(--color-gold); }
-.card--gray-top  { border-top: 4px solid #e5e7eb; }
-.card--bordered  { border: 1px solid #e5e7eb; }
+/* 다크 배경용 카드 */
+.card--dark {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.card--dark:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+/* 투명 카드 (라이트 배경용) */
+.card--ghost {
+  background: transparent;
+  box-shadow: none;
+  padding: 1.5rem;
+}
 
 /* ─── Scroll Reveal ─────────────────────────────── */
 [data-reveal] {

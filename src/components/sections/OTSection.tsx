@@ -1,39 +1,39 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { OT, GOOGLE_FORM_URL } from "@/data/content";
 
 export function OTSection() {
   return (
-    <section id="ot" className="snap-section sec-bg-alt">
+    <section id="ot" className="snap-section sec-bg">
       <div className="inner text-center">
         <div data-reveal>
-          <Badge className="bg-gold text-white mb-4 border-none">{OT.badge}</Badge>
+          <span className="inline-block text-xs font-semibold tracking-widest text-gold uppercase mb-4">{OT.badge}</span>
         </div>
         <h2 data-reveal data-reveal-delay="80" className="mb-4">{OT.title}</h2>
-        <p data-reveal data-reveal-delay="160" className="section-desc text-center">
+        <p data-reveal data-reveal-delay="160" className="section-desc mx-auto">
           {OT.description.split("\n").map((line, i) => (
             <span key={i}>{line}{i < OT.description.split("\n").length - 1 && <><br className="hidden md:block" /></>}</span>
           ))}
         </p>
 
-        <div data-reveal data-reveal-delay="240" className="flex flex-col gap-3 max-w-sm mx-auto mb-6">
+        <div data-reveal data-reveal-delay="240" className="flex flex-col gap-3 max-w-md mx-auto mb-8">
           {OT.schedule.map((s) => (
-            <div key={s.round} className="bg-gray-100 p-3 rounded-lg flex justify-between items-center text-sm">
-              <strong>{s.round}</strong> <span>{s.date}</span>
+            <div key={s.round} className="card py-4 px-6 flex justify-between items-center">
+              <span className="font-bold text-navy">{s.round}</span>
+              <span className="text-gray-600">{s.date}</span>
             </div>
           ))}
         </div>
-        <p className="text-xs text-gray-400 mb-6">{OT.notice}</p>
+        <p className="text-sm text-gray-400 mb-8">{OT.notice}</p>
 
-        <p className="text-sm bg-gold/15 py-2 px-4 rounded-lg font-bold mb-6 inline-block break-keep">
+        <p className="text-sm text-gold font-semibold mb-8 break-keep">
           {OT.earlyBird}
         </p>
 
-        <div data-reveal data-reveal-delay="400" className="flex flex-col sm:flex-row justify-center gap-3">
-          <Button size="lg" className="bg-navy hover:bg-[#1a385b] text-white h-12 px-8" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
+        <div data-reveal data-reveal-delay="400" className="flex flex-col sm:flex-row justify-center gap-4">
+          <Button size="lg" className="bg-navy hover:bg-[#0d2d4a] text-white h-14 px-10 font-semibold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
             {OT.cta.primary}
           </Button>
-          <Button size="lg" className="bg-gold hover:bg-gold-hover text-white h-12 px-8" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
+          <Button size="lg" className="bg-gold hover:bg-gold-hover text-white h-14 px-10 font-semibold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
             {OT.cta.secondary}
           </Button>
         </div>
