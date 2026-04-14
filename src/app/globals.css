@@ -14,6 +14,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-serif: "Noto Serif KR", Georgia, "Times New Roman", serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
   --font-heading: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
@@ -335,4 +336,20 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-item { opacity: 1; animation: none; }
+}
+
+/* ─── Countdown Timer (Frosted Glass) ───────────────── */
+.countdown-frost {
+  position: relative;
+  isolation: isolate;
+}
+.countdown-frost::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
 }

@@ -1,11 +1,12 @@
 import { WHY } from "@/data/content";
+import { renderTitle } from "@/utils/renderTitle";
 
 export function WhySection() {
   return (
     <section id="why" className="snap-section sec-bg">
       <div className="inner">
         <p data-reveal className="section-label">{WHY.label}</p>
-        <h2 data-reveal data-reveal-delay="60">{WHY.title}</h2>
+        <h2 data-reveal data-reveal-delay="60">{renderTitle(WHY.title)}</h2>
         <div className="section-divider mb-4" />
         <p data-reveal data-reveal-delay="100" className="section-desc">{WHY.description}</p>
 

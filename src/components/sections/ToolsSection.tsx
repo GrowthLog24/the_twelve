@@ -1,5 +1,6 @@
 import { Hash, FileText, HardDrive, MessageSquare, MessageCircle } from "lucide-react";
 import { TOOLS } from "@/data/content";
+import { renderTitle } from "@/utils/renderTitle";
 
 const ICONS = {
   hash: Hash,
@@ -13,7 +14,7 @@ export function ToolsSection() {
   return (
     <section id="tools" className="snap-section sec-bg">
       <div className="inner text-center">
-        <h2 data-reveal>{TOOLS.title}</h2>
+        <h2 data-reveal>{renderTitle(TOOLS.title)}</h2>
         <p data-reveal data-reveal-delay="100" className="section-desc mx-auto">{TOOLS.description}</p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">

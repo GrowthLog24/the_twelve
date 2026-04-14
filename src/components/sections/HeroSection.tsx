@@ -11,7 +11,7 @@ export function HeroSection() {
 
       <div className="inner relative z-10 text-center pt-[calc(5rem+4rem+10px)] pb-[calc(5rem+10px)]">
         <div className="hero-item" style={{ animationDelay: "0ms" }}>
-          <div className="inline-block mb-6 px-10 py-1.5 rounded-[10px] text-xs font-semibold tracking-[0.2em] uppercase text-gold border border-gold/50 bg-gold/10 backdrop-blur-sm">
+          <div className="inline-block mb-6 px-10 py-1.5 rounded-full text-xs font-semibold tracking-[0.2em] uppercase text-gold border border-gold/30 bg-gold/10 backdrop-blur-sm">
             {HERO.badge}
           </div>
         </div>
@@ -54,7 +54,7 @@ export function HeroSection() {
             href={GOOGLE_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center h-14 px-10 text-base font-semibold text-white border-2 border-white/30 rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-navy hover:border-white"
+            className="inline-flex items-center justify-center h-14 px-10 text-base font-semibold text-white border border-white/30 rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-navy hover:border-white"
           >
             {HERO.cta.secondary}
           </a>

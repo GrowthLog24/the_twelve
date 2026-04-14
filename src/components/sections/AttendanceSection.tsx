@@ -1,10 +1,11 @@
 import { ATTENDANCE } from "@/data/content";
+import { renderTitle } from "@/utils/renderTitle";
 
 export function AttendanceSection() {
   return (
     <section id="attendance" className="snap-section sec-bg">
       <div className="inner max-w-3xl text-center">
-        <h2 data-reveal className="mb-3">{ATTENDANCE.title}</h2>
+        <h2 data-reveal className="mb-3">{renderTitle(ATTENDANCE.title)}</h2>
         <p data-reveal data-reveal-delay="100" className="text-gray-500 mb-10">{ATTENDANCE.description}</p>
 
         <div className="grid md:grid-cols-3 gap-4 mb-10">
@@ -20,7 +21,7 @@ export function AttendanceSection() {
           ))}
         </div>
 
-        <p data-reveal data-reveal-delay="460" className="text-base text-navy font-medium italic break-keep">
+        <p data-reveal data-reveal-delay="460" className="text-lg text-navy font-medium italic break-keep font-serif">
           &ldquo;{ATTENDANCE.quote}&rdquo;
         </p>
       </div>

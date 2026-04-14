@@ -14,7 +14,7 @@ export function CountdownTimer() {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="relative inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 bg-white/10 backdrop-blur-md px-8 py-5 rounded-2xl">
+    <div className="countdown-frost inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 px-8 py-5 rounded-2xl">
       <span className="text-sm font-semibold text-white/90">수퍼 얼리버드 마감까지</span>
       <div className="flex items-center gap-4">
         <div className="text-center">
@@ -37,8 +37,6 @@ export function CountdownTimer() {
           <span className="text-xs text-white/60 uppercase tracking-wider">Secs</span>
         </div>
       </div>
-      {/* 하단 블러 그라데이션 */}
-      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-white/30 blur-xl rounded-full" />
     </div>
   );
 }

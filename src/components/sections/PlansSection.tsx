@@ -1,12 +1,13 @@
 import { Check, X } from "lucide-react";
 import { PLANS } from "@/data/content";
+import { renderTitle } from "@/utils/renderTitle";
 
 export function PlansSection() {
   return (
     <section id="program" className="snap-section sec-bg-dark">
       <div className="inner">
         <p data-reveal className="section-label text-center">{PLANS.label}</p>
-        <h2 data-reveal data-reveal-delay="60" className="text-white text-center">{PLANS.title}</h2>
+        <h2 data-reveal data-reveal-delay="60" className="text-white text-center">{renderTitle(PLANS.title)}</h2>
         <div className="section-divider mx-auto mb-12" />
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">

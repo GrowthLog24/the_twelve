@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { OT, GOOGLE_FORM_URL } from "@/data/content";
+import { renderTitle } from "@/utils/renderTitle";
 
 export function OTSection() {
   return (
@@ -8,7 +8,7 @@ export function OTSection() {
         <div data-reveal>
           <span className="inline-block text-xs font-semibold tracking-widest text-gold uppercase mb-4">{OT.badge}</span>
         </div>
-        <h2 data-reveal data-reveal-delay="80" className="mb-4">{OT.title}</h2>
+        <h2 data-reveal data-reveal-delay="80" className="mb-4">{renderTitle(OT.title)}</h2>
         <p data-reveal data-reveal-delay="160" className="section-desc mx-auto">
           {OT.description.split("\n").map((line, i) => (
             <span key={i}>{line}{i < OT.description.split("\n").length - 1 && <><br className="hidden md:block" /></>}</span>
@@ -30,12 +30,23 @@ export function OTSection() {
         </p>
 
         <div data-reveal data-reveal-delay="400" className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="bg-navy hover:bg-[#0d2d4a] text-white h-14 px-10 font-semibold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
+          <a
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center justify-center h-14 px-10 text-base font-semibold text-white bg-gold rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(212,175,119,0.4)] hover:scale-[1.02]"
+          >
+            <span className="relative z-10">{OT.cta.secondary}</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </a>
+          <a
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center h-14 px-10 text-base font-semibold text-navy border border-navy/30 rounded-full transition-all duration-300 hover:bg-navy hover:text-white hover:border-navy"
+          >
             {OT.cta.primary}
-          </Button>
-          <Button size="lg" className="bg-gold hover:bg-gold-hover text-white h-14 px-10 font-semibold" render={<a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" />} nativeButton={false}>
-            {OT.cta.secondary}
-          </Button>
+          </a>
         </div>
       </div>
     </section>

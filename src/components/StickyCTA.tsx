@@ -57,15 +57,16 @@ export function StickyCTA() {
               href={GOOGLE_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 bg-gold hover:bg-gold-hover text-white font-bold text-base rounded-lg transition-colors flex items-center justify-center text-center py-3.5"
+              className="group relative flex-1 inline-flex items-center justify-center h-12 text-base font-semibold text-white bg-gold rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_rgba(212,175,119,0.4)] hover:scale-[1.02]"
             >
-              수퍼 얼리버드 신청
+              <span className="relative z-10">수퍼 얼리버드 신청</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
             <a
               href={GOOGLE_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 bg-white/10 hover:bg-white/20 text-white font-bold text-base rounded-lg transition-colors flex items-center justify-center text-center py-3.5 border border-white/20"
+              className="flex-1 inline-flex items-center justify-center h-12 text-base font-semibold text-white border border-white/30 rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-navy hover:border-white"
             >
               무료 OT 참석
             </a>

@@ -1,5 +1,6 @@
 import { Calendar, MapPin, CheckCircle2 } from "lucide-react";
 import { MEETUP } from "@/data/content";
+import { renderTitle } from "@/utils/renderTitle";
 
 const ICONS = { calendar: Calendar, mapPin: MapPin } as const;
 
@@ -11,7 +12,7 @@ export function MeetupSection() {
           <div data-reveal className="flex-1">
             <h2 className="title-compact mb-4 leading-snug">
               {MEETUP.title.map((line, i) => (
-                <span key={i}>{line}{i < MEETUP.title.length - 1 && <br />}</span>
+                <span key={i}>{renderTitle(line)}{i < MEETUP.title.length - 1 && <br />}</span>
               ))}
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">{MEETUP.description}</p>
